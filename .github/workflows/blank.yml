@@ -43,6 +43,10 @@ jobs:
           echo Is build tools installed...?
           mvn --version 
           gradle --version 
+      - name: pushing image to dockerhub 
+        run: | 
+         mvn clean install -DskipTests
+         
   test: 
      runs-on: ubuntu-latest 
      
