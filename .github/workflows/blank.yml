@@ -43,6 +43,13 @@ jobs:
           echo Is build tools installed...?
           mvn --version 
           gradle --version 
+  test: 
+     runs-on: ubuntu-latest 
+     
+     steps:
+       - name: Testing 
+         run: echo Testing....
+       
           
           
           
