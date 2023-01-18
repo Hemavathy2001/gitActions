@@ -46,7 +46,7 @@ jobs:
           image: hrc1663/spring-mongo-image
           tags: latest
           registry: docker.io
-          dockerfile: Dockerfile.ci
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
      
