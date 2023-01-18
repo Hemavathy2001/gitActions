@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Test
 
 # Controls when the workflow will run
 on:
@@ -10,8 +10,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,3 +32,19 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: checking container 
+        run: |
+          echo I am in container 
+          ls -a 
+          echo checking java version .....
+          java --version
+          echo Is git installed.......?
+          git --version
+          echo Is build tools installed...?
+          mvn --version 
+          gradle --version 
+          
+          
+          
+          
+          
