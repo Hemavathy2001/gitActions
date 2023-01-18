@@ -6,9 +6,9 @@ name: Test
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -23,15 +23,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
       - name: checking container 
         run: |
           echo I am in container 
@@ -43,29 +34,22 @@ jobs:
           echo Is build tools installed...?
           mvn --version 
           gradle --version 
+          
       - name: Building jar file  
         run: | 
          mvn clean install -DskipTests
          pwd
-      -  name: Login to Docker Hub
-         uses: docker/login-action@v2
-         with:
+             
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: hrc1663/spring-mongo-image
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile.ci
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: hrc1663/testingwithgithubactionapp:latest
-         
-         
-  test: 
-     runs-on: ubuntu-latest 
      
-     steps:
-       - name: Testing 
-         run: echo Testing....
-       
           
           
           
