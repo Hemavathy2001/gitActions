@@ -16,6 +16,37 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	  <activeProfiles>
+    <activeProfile>github</activeProfile>
+  </activeProfiles>
+
+  <profiles>
+    <profile>
+      <id>github</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+          <id>github</id>
+          <url>https://maven.pkg.github.com/Hemavathy2001/gitActions</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <servers>
+    <server>
+      <id>github</id>
+      <username>Hemavathy2001</username>
+      <password>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</password>
+    </server>
+  </servers>
+</settings>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
