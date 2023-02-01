@@ -37,6 +37,16 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<project ...>
+  
+	  <distributionManagement>
+	    <repository>
+	      <id>ossrh</id>
+	      <name>Test</name>
+	      <url>https://github.com/Hemavathy2001</url>
+	    </repository>
+	  </distributionManagement>
+	</project>
 
 	<build>
 		<plugins>
