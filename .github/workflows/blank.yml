@@ -30,11 +30,16 @@ jobs:
         run: | 
          mvn clean install -DskipTests
          pwd   
+ 
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
-          MAVEN_USERNAME: ${{ secrets.USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+#       - name: Publish package
+#         run: mvn --batch-mode deploy
+#         env:
+#           MAVEN_USERNAME: ${{ secrets.USERNAME }}
+#           MAVEN_PASSWORD: ${{ secrets.TOKEN }}
          
 #       - name: Build & push Docker image
 #         uses: mr-smithers-excellent/docker-build-push@v5
