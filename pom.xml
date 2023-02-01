@@ -38,13 +38,13 @@
 		</dependency>
 	</dependencies>
   
-	  <distributionManagement>
-	    <repository>
-	      <id>github</id>
-	      <name>Test</name>
-	      <url>https://github.com/Hemavathy2001/gitActions</url>
-	    </repository>
-	  </distributionManagement>
+	 <distributionManagement>
+	   <repository>
+	     <id>github</id>
+	     <name>OWNER</name>
+	     <url>https://maven.pkg.github.com/Hemavathy2001/gitActions</url>
+	   </repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
