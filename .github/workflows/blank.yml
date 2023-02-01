@@ -28,6 +28,7 @@ jobs:
           gradle --version   
       - name: Building jar file  
         run: | 
+         mkdir testpackages
          cd testpackages
          mvn clean install -DskipTests
          pwd      
