@@ -37,7 +37,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<project ...>
   
 	  <distributionManagement>
 	    <repository>
@@ -46,7 +45,6 @@
 	      <url>https://github.com/Hemavathy2001</url>
 	    </repository>
 	  </distributionManagement>
-	</project>
 
 	<build>
 		<plugins>
