@@ -4,9 +4,7 @@ name: Test
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "test" ]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -32,15 +30,15 @@ jobs:
         run: | 
          mvn clean install -DskipTests
          pwd      
-      - name: Build & push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: hrc1663/spring-mongo-image
-          tags: latest
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+#       - name: Build & push Docker image
+#         uses: mr-smithers-excellent/docker-build-push@v5
+#         with:
+#           image: hrc1663/spring-mongo-image
+#           tags: latest
+#           registry: docker.io
+#           dockerfile: Dockerfile
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKER_PASSWORD }}
      
           
           
