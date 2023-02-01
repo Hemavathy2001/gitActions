@@ -28,11 +28,9 @@ jobs:
           gradle --version   
       - name: Building jar file  
         run: | 
+         cd testpackages
          mvn clean install -DskipTests
          pwd      
-     
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy -s $WORKSPACE/settings.xml
         env:
          GITHUB_TOKEN: $TOKEN
 #       - name: Build & push Docker image
