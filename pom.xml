@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot-mongodb-docker</artifactId>
+	<artifactId>springboot-mongodb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-mongodb-docker</name>
 	<description>Demo project for Spring Boot</description>
@@ -61,7 +61,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>springboot-mongo-docker</finalName>
 	</build>
 
 </project>
