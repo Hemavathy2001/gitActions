@@ -1,5 +1,7 @@
 name: Publish package to GitHub Packages
-on: push
+on:
+  push:
+    branches: [ "test" ]
 jobs:
   publish:
     runs-on: ubuntu-latest 
@@ -8,6 +10,16 @@ jobs:
       packages: write 
     steps:
       - uses: actions/checkout@v3
+      - name: checking container 
+        run: |
+          echo I am in container..... 
+          ls -a 
+          echo checking java version .....
+          java --version
+          echo Is git installed.......?
+          git --version
+          echo Is build tools installed...?
+          mvn --version   
       - uses: actions/setup-java@v3
         with:
           java-version: '11'
