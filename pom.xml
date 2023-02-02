@@ -41,8 +41,8 @@
 	 <distributionManagement>
 	   <repository>
 	     <id>github</id>
-	     <name>OWNER</name>
-	     <url>https://maven.pkg.github.com/Hemavathy2001/gitActions</url>
+	     <name>Package Publish</name>
+	     <url>https://github.com/Hemavathy2001/gitActions</url>
 	   </repository>
 	</distributionManagement>
 
