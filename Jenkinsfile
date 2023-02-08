@@ -4,7 +4,7 @@ pipeline {
         maven "maven"
     }
     environment{
-        GIT_CREDENTIALS = credentials('GITHUB')
+        GIT_CREDENTIALS = credentials('git')
     }
     stages {
         stage('build') {
