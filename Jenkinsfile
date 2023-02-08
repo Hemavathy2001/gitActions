@@ -3,6 +3,9 @@ pipeline {
     tools{
         maven "maven"
     }
+    environment{
+        GIT_CREDENTIALS = credentials('GITHUB')
+    }
     stages {
         stage('build') {
             steps {
@@ -13,6 +16,7 @@ pipeline {
         }
         stage ('publish'){
             steps{
+                git credentailsId: GIT_CREDENTIALS
                 sh 'mvn --batch-mode deploy'
             }
         }
