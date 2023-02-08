@@ -11,6 +11,11 @@ pipeline {
                 sh 'ls'
             }
         }
+        stage ('publish'){
+            steps{
+                sh 'mvn --batch-mode deploy'
+            }
+        }
     }
 }
   
