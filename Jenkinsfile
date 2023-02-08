@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('publish'){
             steps{
-                git credentailsId: GIT_CREDENTIALS
+                git credentialsId: GIT_CREDENTIALS
                 sh 'mvn --batch-mode deploy'
             }
         }
