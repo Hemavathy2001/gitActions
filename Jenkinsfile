@@ -13,7 +13,8 @@ pipeline {
 //         }
         stage ('publish'){
             steps{
-                sh 'mvn --batch-mode deploy'
+                sh 'java --version'
+//                 sh 'mvn --batch-mode deploy'
             }
         }
     }
