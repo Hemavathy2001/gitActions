@@ -1,36 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
-<!--    <servers>
-      <server>
-         <username>Hemavathy2001</username>
-         <password>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</password>
-         <id>snapshots</id>
-      </server>
-   </servers>
-   <profiles>
-      <profile>
-         <repositories>
-            <repository>
-               <snapshots>
-                  <enabled>false</enabled>
-               </snapshots>
-               <id>github</id>
-               <name>libs-release</name>
-               <url>https://maven.pkg.github.com/Hemavathy2001/gitActions</url>
-            </repository>
-         </repositories>
-         <id>github</id>
-      </profile>
-   </profiles>
-   <activeProfiles>
-      <activeProfile>github</activeProfile>
-   </activeProfiles>
-</settings> -->
 <servers>
 <server>
      <id>github</id>
      <username>Hemavathy2001</username>
-     <password>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</password>
+<!--      <password>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</password> -->
      </server>
 </servers>
 <profiles>
