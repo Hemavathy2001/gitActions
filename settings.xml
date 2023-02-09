@@ -4,7 +4,7 @@
 <server>
      <id>github</id>
      <username>Hemavathy2001</username>
-<!--      <password>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</password> -->
+     <password>${{ secrets.TOKEN }}</password> 
      </server>
 </servers>
 <profiles>
