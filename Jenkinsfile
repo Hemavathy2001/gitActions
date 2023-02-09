@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn clean install -s settings.xml'
+                sh 'mvn clean install'
                 sh 'ls -a'
             }
         }
