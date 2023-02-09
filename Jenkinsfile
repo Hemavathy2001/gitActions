@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn clean install -s ./settings.xml'
                 sh 'ls -a'
             }
         }
@@ -15,7 +15,7 @@ pipeline {
             steps{
                 echo "Java Version....."
                 sh 'java --version'
-                sh 'mvn --batch-mode deploy'
+                sh 'mvn --batch-mode deploy -s settings.xml'
             }
         }
     }
