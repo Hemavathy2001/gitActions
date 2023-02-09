@@ -5,15 +5,15 @@ pipeline {
         jdk "jdk"
     }
     stages {
-//         stage('build') {
-//             steps {
+        stage('build') {
+            steps {
 //                 sh '''
 //                  env | grep -e PATH -e JAVA_HOME
 //                 '''
 //                 sh 'mvn --version'
-//                 sh 'ls -a'
-//             }
-//         }
+                sh 'ls -a'
+            }
+        }
         stage ('publish'){
             steps{
                 echo "Java Version....."
