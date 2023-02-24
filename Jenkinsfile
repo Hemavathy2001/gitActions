@@ -13,7 +13,7 @@ pipeline {
         stage ('publish'){
             
             steps{
-                echo "Java Version....."
+                echo "Java Version......."
                 sh 'java --version'
                 withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')])
                 {
