@@ -11,6 +11,7 @@ pipeline {
             }
         }
         stage ('publish'){
+            
             steps{
                 echo "Java Version....."
                 sh 'java --version'
