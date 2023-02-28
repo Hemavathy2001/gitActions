@@ -32,21 +32,24 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn compile'
+//                 sh 'mvn compile'
+                   sh 'mvn --version' 
+                   sh 'java --version'
+                  
             }
         }
-        stage('test'){
-            steps{
-                sh 'mvn test'
-            }
-        }
-        stage ('deploy'){     
-            steps{
-                withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')])
-                {
-                    sh 'mvn deploy -s .m2/settings.xml -Dserver.username=${USERNAME_VAR} -Dserver.password=${PASSWORD_VAR}'
-                }
-            }
-        }
-    }
+//         stage('test'){
+//             steps{
+//                 sh 'mvn test'
+//             }
+//         }
+//         stage ('deploy'){     
+//             steps{
+//                 withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')])
+//                 {
+//                     sh 'mvn deploy -s .m2/settings.xml -Dserver.username=${USERNAME_VAR} -Dserver.password=${PASSWORD_VAR}'
+//                 }
+//             }
+//         }
+//     }
 }
