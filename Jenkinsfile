@@ -33,7 +33,9 @@ pipeline {
         stage('build') {
             steps {
 //                 sh 'mvn compile'
+                   sh 'echo $JAVA_HOME'
                    sh 'export JAVA_HOME=$(/usr/libexec/java_home -v 17)' 
+                   sh 'echo $JAVA_HOME'
                    sh 'mvn --version' 
                    sh 'java --version'
                   
