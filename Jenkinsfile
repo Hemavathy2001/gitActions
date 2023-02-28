@@ -34,7 +34,6 @@ pipeline {
             steps {
 //                 sh 'mvn compile'
                    sh 'export JAVA_HOME=$(/usr/libexec/java_home -v 17)' 
-                   source ~/.zshenv
                    sh 'mvn --version' 
                    sh 'java --version'
                   
