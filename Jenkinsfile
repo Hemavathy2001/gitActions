@@ -1,3 +1,29 @@
+// pipeline {
+//     agent any
+//     tools{
+//            maven "maven"
+//     }
+//     stages {
+//         stage('build') {
+//             steps {
+//                 sh 'mvn clean install'
+//                 sh 'ls -a'
+//             }
+//         }
+//         stage ('publish'){
+            
+//             steps{
+//                 echo "Java Version......."
+//                 sh 'java --version'
+//                 withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')])
+//                 {
+//                     sh 'mvn deploy -s  settings.xml -Dserver.username=${USERNAME_VAR} -Dserver.password=${PASSWORD_VAR}'
+//                 }
+//             }
+//         }
+//     }
+// }
+
 pipeline {
     agent any
     tools{
@@ -6,21 +32,21 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn clean install'
-                sh 'ls -a'
+                sh 'mvn compile'
             }
         }
-        stage ('publish'){
-            
+        stage('test'){
             steps{
-                echo "Java Version......."
-                sh 'java --version'
+                sh 'mvn test'
+            }
+        }
+        stage ('deploy'){     
+            steps{
                 withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')])
                 {
-                    sh 'mvn deploy -s  settings.xml -Dserver.username=${USERNAME_VAR} -Dserver.password=${PASSWORD_VAR}'
+                    sh 'mvn deploy -s .m2/settings.xml -Dserver.username=${USERNAME_VAR} -Dserver.password=${PASSWORD_VAR}'
                 }
             }
         }
     }
 }
-  
